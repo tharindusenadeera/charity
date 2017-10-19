@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { TaskService } from '../app/http.services';
 
 @Component({
+  moduleId: module.id,
   selector: 'my-app',
-  templateUrl: `app/app.component.html`,
+  templateUrl: `app.component.html`,
+  providers : [TaskService]
 })
-export class AppComponent  { 
+export class AppComponent{ 
   onSubmit(value: any){
     console.log(value);
   }
